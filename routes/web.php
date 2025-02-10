@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [UserController::class, 'index'])->name('index');
+
+Route::prefix('sesi')->group(function () {
+    Route::get('/login', [UserController::class, 'loginForm'])->name('loginForm');
+    Route::post('/login', [UserController::class, 'login'])->name('login');
+    Route::get('/register', [UserController::class, 'registerForm'])->name('registerForm');
+    Route::post('/register', [UserController::class, 'register'])->name('register');
+    Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+});
+
+Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard.index');
+
+Route::middleware(['admin'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 });
