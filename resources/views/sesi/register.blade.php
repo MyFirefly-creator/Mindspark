@@ -4,9 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    
+    <!-- Bootstrap & FontAwesome -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <style>
         body {
             background-color: #f8f9fa;
@@ -22,10 +25,16 @@
             border-radius: 10px;
             object-fit: cover;
             height: 100%;
+            min-height: 250px;
         }
         .form-control {
             border-radius: 8px;
             background-color: #e9ecef;
+        }
+        .form-control:focus {
+            background-color: #e9ecef;
+            box-shadow: none;
+            border: none;
         }
         .btn-custom {
             background-color: #007bff;
@@ -34,6 +43,16 @@
         }
         .btn-custom:hover {
             background-color: #0056b3;
+        }
+        .password-wrapper {
+            position: relative;
+        }
+        .password-wrapper .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
         }
         @media (max-width: 768px) {
             .carousel {
@@ -68,7 +87,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <h2 class="text-center fw-bold mb-3">Register</h2>
-                <form id="registerForm" action="{{ route('register') }}">
+                <form id="registerForm" method="POST" action="{{ route('register') }}">
                     @csrf
                     <div class="mb-3">
                         <input type="text" class="form-control" name="nis" placeholder="NIS" required>
@@ -82,11 +101,13 @@
                     <div class="mb-3">
                         <input type="text" class="form-control" name="alamat" placeholder="Alamat" required>
                     </div>
-                    <div class="mb-3">
-                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                    <div class="mb-3 password-wrapper">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                        <i class="fas fa-eye toggle-password" onclick="togglePassword('password')"></i>
                     </div>
-                    <div class="mb-3">
-                        <input type="password" class="form-control" name="password_confirmation" placeholder="Konfirmasi Password" required>
+                    <div class="mb-3 password-wrapper">
+                        <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="Konfirmasi Password" required>
+                        <i class="fas fa-eye toggle-password" onclick="togglePassword('password_confirmation')"></i>
                     </div>
                     <button type="submit" class="btn btn-custom w-100">Register</button>
                 </form>
@@ -96,8 +117,18 @@
             </div>
         </div>
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        function togglePassword(id) {
+            var input = document.getElementById(id);
+            if (input.type === "password") {
+                input.type = "text";
+            } else {
+                input.type = "password";
+            }
+        }
+        
         document.getElementById('registerForm').addEventListener('submit', function(event) {
             event.preventDefault();
             Swal.fire({

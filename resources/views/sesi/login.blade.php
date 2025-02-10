@@ -35,6 +35,16 @@
         .btn-custom:hover {
             background-color: #0056b3;
         }
+        .password-wrapper {
+            position: relative;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
         @media (max-width: 768px) {
             .carousel {
                 display: none;
@@ -78,8 +88,9 @@
                         <div class="mb-3">
                             <input type="text" name="nis" class="form-control" placeholder="NIS" required>
                         </div>
-                        <div class="mb-3">
-                            <input type="password" name="password" class="form-control" placeholder="Password" required>
+                        <div class="mb-3 password-wrapper">
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                            <i class="fas fa-eye toggle-password" onclick="togglePassword('password')"></i>
                         </div>
                         <button type="button" class="btn btn-custom w-100" onclick="submitForm()">Login</button>
                     </form>
@@ -92,6 +103,20 @@
     </div>
 
     <script>
+        function togglePassword(id) {
+            var input = document.getElementById(id);
+            var icon = input.nextElementSibling;
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                input.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+        
         function submitForm() {
             Swal.fire({
                 title: 'Konfirmasi Login',
