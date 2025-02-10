@@ -21,6 +21,7 @@
             <button class="btn btn-dark">Fiksi</button>
             <button class="btn btn-primary">Pendidikan</button>
             <button class="btn btn-dark">Seni</button>
+            <button class="btn btn-dark">Non Fiksi</button>
         </div>
 
         <h3 class="mt-4">Daftar Buku</h3>
