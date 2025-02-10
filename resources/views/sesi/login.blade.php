@@ -116,7 +116,7 @@
                 icon.classList.add("fa-eye");
             }
         }
-        
+
         function submitForm() {
             Swal.fire({
                 title: 'Konfirmasi Login',
