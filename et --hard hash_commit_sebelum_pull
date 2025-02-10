@@ -1,0 +1,168 @@
+[33mcommit 125971490e7b1af87502151295e49087e71c3e90[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mAuth[m[33m)[m
+Merge: 691dce9 14d354c
+Author: MyFirefly-creator <bdiwuputra@gmail.com>
+Date:   Mon Feb 10 09:17:14 2025 +0700
+
+    Merge branch 'main' of https://github.com/MyFirefly-creator/Mindspark into Auth
+
+[33mcommit 691dce94aa4f58840bceb2ddce2ffc4f76d0bf67[m[33m ([m[1;31morigin/Auth[m[33m)[m
+Author: MyFirefly-creator <bdiwuputra@gmail.com>
+Date:   Mon Feb 10 09:14:10 2025 +0700
+
+    CSRF And Route in Register
+
+[33mcommit 14d354c7d9725adb898ee3ba0748cc73f4da3987[m[33m ([m[1;31morigin/main[m[33m)[m
+Merge: 6de00ad 3c6aa65
+Author: Bagas Diwu Putra <bdiwuputra@gmail.com>
+Date:   Mon Feb 10 09:07:45 2025 +0700
+
+    Merge pull request #10 from MyFirefly-creator/Auth
+    
+    CSRF in Register
+
+[33mcommit 3c6aa6509f84efecaa4744f7954d6817f0c4477a[m
+Author: MyFirefly-creator <bdiwuputra@gmail.com>
+Date:   Mon Feb 10 09:06:56 2025 +0700
+
+    CSRF in Register
+
+[33mcommit 6de00adc5881ff7834efeaf7640f3cb05c614483[m
+Merge: cfba282 e6ceeb5
+Author: Bagas Diwu Putra <bdiwuputra@gmail.com>
+Date:   Mon Feb 10 08:49:08 2025 +0700
+
+    Merge pull request #9 from MyFirefly-creator/Buku
+    
+    Perbaikan Controller
+
+[33mcommit e6ceeb523b0afcead2650ac0d65fe4d2b7d54eeb[m[33m ([m[1;31morigin/Buku[m[33m, [m[1;32mBuku[m[33m)[m
+Author: MyFirefly-creator <bdiwuputra@gmail.com>
+Date:   Mon Feb 10 08:48:36 2025 +0700
+
+    Perbaikan Controller
+
+[33mcommit cfba28216cfe4362bf98c2a1f64835c345a7083f[m
+Merge: 48b0e11 9a08f5b
+Author: Bagas Diwu Putra <bdiwuputra@gmail.com>
+Date:   Mon Feb 10 07:29:27 2025 +0700
+
+    Merge pull request #8 from MyFirefly-creator/Auth
+    
+    Middleware Admin+superadmin , Views , Route
+
+[33mcommit 9a08f5b4a7929cabd59fa460492a5247c4a6a24f[m
+Author: MyFirefly-creator <bdiwuputra@gmail.com>
+Date:   Mon Feb 10 07:27:48 2025 +0700
+
+    Middleware Admin+superadmin , Views , Route
+
+[33mcommit 48b0e11ee65ad8c86349be6f607f32897af07079[m
+Merge: b95dbd9 8f424d9
+Author: Bagas Diwu Putra <bdiwuputra@gmail.com>
+Date:   Sun Feb 9 19:45:07 2025 +0700
+
+    Merge pull request #7 from MyFirefly-creator/Ulasan
+    
+    Ulasan BackEnd
+
+[33mcommit b95dbd999a86609d25dd5defef940605bd545ee7[m
+Merge: 903c8c3 f5e46ad
+Author: Bagas Diwu Putra <bdiwuputra@gmail.com>
+Date:   Sun Feb 9 19:44:50 2025 +0700
+
+    Merge pull request #6 from MyFirefly-creator/Favorit
+    
+    Favorit BackEnd
+
+[33mcommit 903c8c3a53285faf00b08be519c758c9932ea11c[m
+Merge: f64348f 7c28668
+Author: Bagas Diwu Putra <bdiwuputra@gmail.com>
+Date:   Sun Feb 9 19:44:29 2025 +0700
+
+    Merge pull request #5 from MyFirefly-creator/Kategori
+    
+    Kategori BackEnd
+
+[33mcommit f64348ffbf2847909e6320bb9ec0d1601b6a72a8[m
+Merge: 44a40e9 1b5e177
+Author: Bagas Diwu Putra <bdiwuputra@gmail.com>
+Date:   Sun Feb 9 19:44:11 2025 +0700
+
+    Merge pull request #4 from MyFirefly-creator/Buku
+    
+    Buku BackEnd
+
+[33mcommit 44a40e9ebf4a19b8a6254fd78ef01bedfb878e86[m
+Merge: 2ccdaf7 cac7fe6
+Author: Bagas Diwu Putra <bdiwuputra@gmail.com>
+Date:   Sun Feb 9 19:43:52 2025 +0700
+
+    Merge pull request #3 from MyFirefly-creator/Peminjaman
+    
+    Peminjaman BackEnd
+
+[33mcommit 2ccdaf737fee2ad93f8e633a7c6458dcf84f3a86[m
+Merge: 91345b3 965c29a
+Author: Bagas Diwu Putra <bdiwuputra@gmail.com>
+Date:   Sun Feb 9 19:43:32 2025 +0700
+
+    Merge pull request #2 from MyFirefly-creator/Moderisasi
+    
+    Moderisasi BackEnd
+
+[33mcommit 965c29aef1eb8c27e9462b7f4b93d95d8fa56220[m[33m ([m[1;31morigin/Moderisasi[m[33m, [m[1;32mModerisasi[m[33m)[m
+Author: MyFirefly-creator <bdiwuputra@gmail.com>
+Date:   Sun Feb 9 19:42:37 2025 +0700
+
+    Moderisasi BackEnd
+
+[33mcommit 8f424d9661f399f1880a8b3eef6e43d00f90bfb2[m[33m ([m[1;31morigin/Ulasan[m[33m, [m[1;32mUlasan[m[33m)[m
+Author: MyFirefly-creator <bdiwuputra@gmail.com>
+Date:   Sun Feb 9 19:41:51 2025 +0700
+
+    Ulasan BackEnd
+
+[33mcommit f5e46ad3225e81bb52c08dffba0c930bcd97e047[m[33m ([m[1;31morigin/Favorit[m[33m, [m[1;32mFavorit[m[33m)[m
+Author: MyFirefly-creator <bdiwuputra@gmail.com>
+Date:   Sun Feb 9 19:40:52 2025 +0700
+
+    Favorit BackEnd
+
+[33mcommit cac7fe65d4f4c720b76e2002a48d087d48f783f6[m[33m ([m[1;31morigin/Peminjaman[m[33m, [m[1;32mPeminjaman[m[33m)[m
+Author: MyFirefly-creator <bdiwuputra@gmail.com>
+Date:   Sun Feb 9 19:39:52 2025 +0700
+
+    Peminjaman BackEnd
+
+[33mcommit 1b5e177568704dd6c794c51c03a737483bd9f6e5[m
+Author: MyFirefly-creator <bdiwuputra@gmail.com>
+Date:   Sun Feb 9 19:38:18 2025 +0700
+
+    Buku BackEnd
+
+[33mcommit 7c28668dde2b87fb404d78f3a83226fc752b9792[m[33m ([m[1;31morigin/Kategori[m[33m, [m[1;32mKategori[m[33m)[m
+Author: MyFirefly-creator <bdiwuputra@gmail.com>
+Date:   Sun Feb 9 19:35:27 2025 +0700
+
+    Kategori BackEnd
+
+[33mcommit 91345b34be1cd93510efdc0d8d70601ae6de1598[m
+Merge: 573d618 1749a16
+Author: Bagas Diwu Putra <bdiwuputra@gmail.com>
+Date:   Sun Feb 9 19:16:27 2025 +0700
+
+    Merge pull request #1 from MyFirefly-creator/Auth
+    
+    Auth BackEnd
+
+[33mcommit 1749a16d4465d2797adc37ca492e2899dc9d91a4[m
+Author: MyFirefly-creator <bdiwuputra@gmail.com>
+Date:   Sun Feb 9 19:15:30 2025 +0700
+
+    Auth BackEnd
+
+[33mcommit 573d618e12ba3e631d8a6784c945f63799b18814[m
+Author: MyFirefly-creator <bdiwuputra@gmail.com>
+Date:   Sun Feb 9 19:03:09 2025 +0700
+
+    Model Migration
