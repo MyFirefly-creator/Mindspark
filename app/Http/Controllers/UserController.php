@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Buku;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -69,6 +70,7 @@ class UserController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard.index');
+        $dataBuku = Buku::orderBy('created_at', 'desc')->take(8)->get();
+        return view('dashboard.index', compact('dataBuku'));
     }
 }
