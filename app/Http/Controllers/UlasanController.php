@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 
 class UlasanController extends Controller
 {
-    public function index($bukuID)
-    {
-        $ulasans = Ulasan::where('BukuID', $bukuID)->with('user')->get();
-        return view('ulasans.index', compact('ulasans'));
-    }
 
     public function store(Request $request)
     {

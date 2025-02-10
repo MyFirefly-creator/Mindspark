@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Buku;
+use App\Models\Ulasan;
 use App\Models\Peminjaman;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -61,6 +62,8 @@ class BukuController extends Controller
     public function show($id)
     {
         $buku = Buku::findOrFail($id);
+        $ulasans = Ulasan::where('BukuID', $id)->with('user')->get();
+
 
         $peminjamanTerakhir = $buku->peminjaman()->latest()->first();
         $sedangDipinjam = $peminjamanTerakhir && $peminjamanTerakhir->status === 'dipinjam';
