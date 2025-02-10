@@ -75,6 +75,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('peminjaman/create', [PeminjamanController::class, 'create'])->name('peminjaman.create');
     Route::post('peminjaman', [PeminjamanController::class, 'store'])->name('peminjaman.store');
     Route::get('peminjaman/{peminjaman}', [PeminjamanController::class, 'show'])->name('peminjaman.show');
+    Route::get('laporan-peminjaman', [PeminjamanController::class, 'laporan'])->name('peminjaman.laporan');
 
     Route::get('/buku/{id}', [BukuController::class, 'show'])->name('buku.show');
 
