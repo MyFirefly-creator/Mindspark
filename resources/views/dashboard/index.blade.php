@@ -23,27 +23,20 @@
             <button class="btn btn-dark">Seni</button>
         </div>
 
+        <h3 class="mt-4">Daftar Buku</h3>
         <div class="row mt-3">
-            <div class="col-md-3">
-                <div class="card p-3">
-                    <p class="text-center">Buku 1</p>
+            @foreach($dataBuku as $buku)
+                <div class="col-md-3">
+                    <div class="card p-3">
+                        <img src="{{ asset($buku->image) }}" class="card-img-top rounded" alt="{{ $buku->NamaBuku }}">
+                        <div class="card-body text-center">
+                            <h5>{{ $buku->NamaBuku }}</h5>
+                            <p>{{ Str::limit($buku->deskripsi, 50) }}</p>
+                            <a href="{{ route('buku.show', $buku->id) }}" class="btn btn-primary btn-sm">Detail</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card p-3">
-                    <p class="text-center">Buku 2</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card p-3">
-                    <p class="text-center">Buku 3</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card p-3">
-                    <p class="text-center">Buku 4</p>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 @endsection
