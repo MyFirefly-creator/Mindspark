@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Peminjaman;
 use App\Models\Buku;
+use App\Models\Peminjaman;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PeminjamanController extends Controller
 {
@@ -95,5 +96,14 @@ class PeminjamanController extends Controller
     {
         $peminjaman->delete();
         return redirect()->route('peminjaman.index')->with('success', 'Peminjaman berhasil dihapus!');
+    }
+
+    public function laporan()
+    {
+        $peminjaman = Peminjaman::with('buku', 'user')->get();
+
+        $pdf = Pdf::loadView('peminjaman.laporan', compact('peminjaman'));
+
+        return $pdf->download('laporan_peminjaman.pdf');
     }
 }
