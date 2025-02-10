@@ -60,20 +60,13 @@ class BukuController extends Controller
 
     public function show($id)
     {
-    $buku = Buku::find($id);
+        $buku = Buku::findOrFail($id);
 
-    if (!$buku) {
-        return redirect()->route('buku.index')->with('error', 'Buku tidak ditemukan.');
+        $peminjamanTerakhir = $buku->peminjaman()->latest()->first();
+        $sedangDipinjam = $peminjamanTerakhir && $peminjamanTerakhir->status === 'dipinjam';
+
+        return view('buku.show', compact('buku', 'sedangDipinjam', 'peminjamanTerakhir'));
     }
-
-    $peminjamanTerakhir = Peminjaman::where('buku_id', $id)->latest()->first();
-    $sedangDipinjam = $peminjamanTerakhir && $peminjamanTerakhir->status === 'dipinjam';
-
-    $bukuLainnya = Buku::where('id', '!=', $id)->inRandomOrder()->limit(4)->get();
-
-    return view('buku.show', compact('buku', 'sedangDipinjam', 'peminjamanTerakhir', 'bukuLainnya'));
-    }
-
 
     public function edit($id)
     {
