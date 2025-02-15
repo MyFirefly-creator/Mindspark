@@ -3,7 +3,7 @@
         <img src="{{ Auth::user()->foto_profil ? asset('profil/' . Auth::user()->foto_profil) : asset('profil/avatar.png') }}"
         class="rounded-circle"
         style="width: 60px; height: 60px; object-fit: cover; margin: auto;">
-           <p class="fw-bold mt-2">
+        <p class="fw-bold mt-2">
             {{ Auth::check() ? Auth::user()->nama : 'Guest' }}
         </p>
     </div>
@@ -13,9 +13,11 @@
             <li><a href="#"><span class="material-symbols-outlined">home</span> Beranda</a></li>
 
             @if (Auth::check())
-                <li><a href="#"><span class="material-symbols-outlined">category</span> Kategori</a></li>
-                <li><a href="#"><span class="material-symbols-outlined">dashboard</span> Dashboard</a></li>
+                <li><a href="{{ route('kategori.index') }}"><span class="material-symbols-outlined">category</span> Kategori</a></li>
+                <li><a href="{{ route('dashboard.index') }}"><span class="material-symbols-outlined">dashboard</span> Dashboard</a></li>
                 <li><a href="#"><span class="material-symbols-outlined">settings</span> Settings</a></li>
+                <li><a href="{{ route('favorit.index') }}"><span class="material-symbols-outlined">favorite</span> Favorit</a></li>
+
 
                 @if(Auth::user()->role === 'admin')
                     <li><a class="text-danger" href="{{ route('ban.index') }}">Admin</a></li>
