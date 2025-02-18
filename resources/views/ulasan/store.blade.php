@@ -33,38 +33,50 @@
         function saveBook() {
             var bookTitle = document.getElementById("bookTitle").value;
             if (bookTitle) {
-                var savedBooks = document.getElementById("savedBooks");
-                var newBook = document.createElement("li");
-                newBook.classList.add("list-group-item");
-                newBook.innerHTML = bookTitle;
-                savedBooks.appendChild(newBook);
-                
-                saveToLocalStorage(bookTitle);
-                document.getElementById("bookTitle").value = "";
+                fetch('/save-book', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    },
+                    body: JSON.stringify({ title: bookTitle })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        var savedBooks = document.getElementById("savedBooks");
+                        var newBook = document.createElement("li");
+                        newBook.classList.add("list-group-item");
+                        newBook.innerHTML = bookTitle;
+                        savedBooks.appendChild(newBook);
+                        document.getElementById("bookTitle").value = "";
+                    } else {
+                        alert("Gagal menyimpan buku.");
+                    }
+                });
             } else {
                 alert("Masukkan judul buku yang ingin disimpan.");
             }
         }
 
-        function saveToLocalStorage(bookTitle) {
-            let books = JSON.parse(localStorage.getItem("savedBooks")) || [];
-            books.push(bookTitle);
-            localStorage.setItem("savedBooks", JSON.stringify(books));
-        }
-
         function loadSavedBooks() {
-            let books = JSON.parse(localStorage.getItem("savedBooks")) || [];
-            var savedBooks = document.getElementById("savedBooks");
-            books.forEach(book => {
-                var newBook = document.createElement("li");
-                newBook.classList.add("list-group-item");
-                newBook.innerHTML = book;
-                savedBooks.appendChild(newBook);
+            fetch('/get-books')
+            .then(response => response.json())
+            .then(data => {
+                var savedBooks = document.getElementById("savedBooks");
+                savedBooks.innerHTML = "";
+                data.books.forEach(book => {
+                    var newBook = document.createElement("li");
+                    newBook.classList.add("list-group-item");
+                    newBook.innerHTML = book;
+                    savedBooks.appendChild(newBook);
+                });
             });
         }
     </script>
 </head>
 <body class="bg-light">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <div class="container mt-5">
         <div class="card p-4">
             <h2 class="mb-4">Ulasan Buku</h2>
@@ -73,16 +85,6 @@
                     <h5>Agus Pratama</h5>
                     <div class="text-warning">★★★★★</div>
                     <p>Buku ini sangat inspiratif, penuh dengan wawasan yang mendalam dan gaya bahasa yang menarik.</p>
-                </div>
-                <div class="border-bottom py-3">
-                    <h5>Dewi Lestari</h5>
-                    <div class="text-warning">★★★★☆</div>
-                    <p>Alur ceritanya menarik dan banyak pelajaran berharga, tetapi ada beberapa bagian yang terasa lambat.</p>
-                </div>
-                <div class="border-bottom py-3">
-                    <h5>Rizky Hidayat</h5>
-                    <div class="text-warning">★★★☆☆</div>
-                    <p>Cerita cukup bagus, namun kurang menggali karakter utama dengan lebih dalam.</p>
                 </div>
             </div>
             <h4>Tambahkan Ulasan</h4>
