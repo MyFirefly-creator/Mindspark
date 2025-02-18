@@ -30,6 +30,7 @@
                 <li><a href="{{ route('dashboard.index') }}"><span class="material-symbols-outlined">dashboard</span> Dashboard</a></li>
                 <li><a href="#"><span class="material-symbols-outlined">settings</span> Settings</a></li>
                 <li><a href="{{ route('favorit.index') }}"><span class="material-symbols-outlined">favorite</span> Favorit</a></li>
+                <li><a href="{{ route('ulasan.store') }}"><span class="material-symbols-outlined">Ulasan</span> Ulasan</a></li>
 
                 @if(Auth::user()->role === 'admin')
                     <li><a class="text-danger" href="{{ route('ban.index') }}">Admin</a></li>
